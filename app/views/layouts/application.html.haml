@@ -1,0 +1,29 @@
+!!! 5
+%html
+  %head
+    %title Sen2
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    %link{ href: 'https://fonts.googleapis.com/css?family=Oxygen:400,700,300', rel: 'stylesheet', type: 'text/css' }
+
+  %body
+    %header#main-header
+      %h1 Sen2
+      %nav.main-nav
+        %ul
+          %li= link_to 'blog', blogs_path, class: cp(blogs_path)
+          = render '/categories/listcats'
+          %li= link_to 'contact', contact_path, class: cp(contact_path)
+      %nav.admin-nav
+        %ul
+          - if session[:user_id]
+            %li= link_to 'New Blog', new_blog_path
+            %li= link_to 'Categories', categories_path
+            %li= link_to 'Artwork', artworks_path
+            %li= link_to 'Logout', logout_path, method: :delete 
+    #main-content
+      = yield
+
+  :javascript
+    $('nav.pinned').pin({  minWidth: 480 })

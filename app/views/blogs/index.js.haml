@@ -1,0 +1,8 @@
+$('.posts').append('<div id="page_#{ @blogs.current_page }"> #{ j render(@blogs) } </div>');
+- if @blogs.next_page
+  $('.pagination').replaceWith('#{ j will_paginate(@blogs) }');
+- else
+  $('.pagination').remove();
+- sleep 1
+
+FB.XFBML.parse(document.getElementById('page_#{ @blogs.current_page }'));

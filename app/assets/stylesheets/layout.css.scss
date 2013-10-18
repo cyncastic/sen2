@@ -1,0 +1,21 @@
+*, *:before, *:after { box-sizing: border-box; }
+
+body{ background: #111; color: #fff; }
+
+#main-header{
+  h1{
+
+  }
+  nav{
+    ul{
+      li{
+        a{
+          &:hover{
+          }
+          &.current{
+          }
+        }
+      }
+    }
+  }
+}

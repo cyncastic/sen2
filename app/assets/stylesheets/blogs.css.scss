@@ -1,0 +1,62 @@
+.posts{
+  article{
+    padding-bottom: 1em;
+    position: relative;
+    header{
+      h1{
+        a{
+          color: #eee;
+          text-decoration: none;
+          transition: color .5s ease-in-out;
+          &:hover{
+            color: #fff;
+            background: none;
+          }
+        }
+      }
+    }
+    .posted{
+      position: absolute;
+      right: 0;
+      top: .5em;
+      color: white;
+    }
+    img{
+      margin: .25em 0;
+      box-shadow: 0 0 10px rgba(0,0,0,.333);
+    }
+    .post{
+      padding: .25em;
+      font-size: 1.125em;
+      background: rgba(255,255,255,.25);
+    }
+    footer{
+      .fb-like{
+        margin: .25em 0;
+      }
+      ul{
+        background: rgba(255,0,0,.25);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+          margin: 0; 
+          padding: 0 .25em;
+          display: inline-block;
+          a{
+            text-decoration: none;
+            color: black;
+            &:hover{
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.load-more-posts{
+  &:hover{
+  }
+}
