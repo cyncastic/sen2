@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 ruby '2.0.0'
 
@@ -32,3 +32,5 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor'
 end
+
+gem 'unicorn'

@@ -9,13 +9,13 @@
 
   %body
     %header#main-header
-      %h1 Sen2
-      %nav.main-nav
+      %h1= link_to 'Sen2', root_path, class: cp(root_path)
+      %nav#main-nav
         %ul
           %li= link_to 'blog', blogs_path, class: cp(blogs_path)
           = render '/categories/listcats'
           %li= link_to 'contact', contact_path, class: cp(contact_path)
-      %nav.admin-nav
+      %nav#admin-nav
         %ul
           - if session[:user_id]
             %li= link_to 'New Blog', new_blog_path
@@ -24,6 +24,3 @@
             %li= link_to 'Logout', logout_path, method: :delete 
     #main-content
       = yield
-
-  :javascript
-    $('nav.pinned').pin({  minWidth: 480 })
