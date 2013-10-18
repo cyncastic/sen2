@@ -7,5 +7,5 @@ CarrierWave.configure do |config|
   
   config.cache_dir = "#{Rails.root}/tmp/uploads" #for heroku
 
-  config.fog_directory  = 'sen1' # required
+  config.fog_directory  = 'sen2' # required
 end
