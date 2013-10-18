@@ -7,7 +7,7 @@ class Artwork < ActiveRecord::Base
 
   after_update :crop_avatar
 
-  mount_uploader :image, DepsuploadUploader
+  mount_uploader :image, Sen2uploadUploader
 
   def crop_avatar
     image.recreate_versions! if crop_x.present?

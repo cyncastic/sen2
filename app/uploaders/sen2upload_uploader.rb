@@ -1,4 +1,4 @@
-class DepsuploadUploader < CarrierWave::Uploader::Base
+class Sen2uploadUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
   # storage :file
