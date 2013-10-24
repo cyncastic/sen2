@@ -1,14 +1,17 @@
 
 article{
-  padding-bottom: 2em;
+  background: url('https://s3-us-west-2.amazonaws.com/sen2/static/sen_dot.png') no-repeat bottom center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
   position: relative;
   a.blog-image{
     display: block;
     box-shadow: 0 0 .25em rgba(0,0,0,.5);
-    background: white;
+    background: #111;
     text-align: center;
     img{
-      margin: 1px 0 0;
+      border-top: 1px white solid;
+      border-bottom: 1px black solid;
       vertical-align: middle;
     }
   }
@@ -38,7 +41,8 @@ article{
   }
   footer{
     .fb-like{
-      margin: .25em 0;
+      margin: .3334em 0;
+      text-align: left;
     }
     ul{
       background: rgba(255,0,0,.25);
