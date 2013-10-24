@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016014829) do
+ActiveRecord::Schema.define(version: 20131024022800) do
 
   create_table "artworks", force: true do |t|
     t.string   "title"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20131016014829) do
     t.string   "name"
     t.boolean  "hidden"
     t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "headers", force: true do |t|
+    t.string   "image"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
