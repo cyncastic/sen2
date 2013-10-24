@@ -1,5 +1,5 @@
 %article
-  .blog-image=image_tag blog.image_url(:large), alt: blog.title
+  %a.blog-image{ href: blog_url(blog.id) }=image_tag blog.image_url(:large), alt: blog.title
   %header
     %h1= link_to blog.title, blog
     .posted= blog.posted
