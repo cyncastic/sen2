@@ -1,10 +1,30 @@
 $admin: #000;
 
-nav.admin{
+nav#admin-nav{
+  background: #ddd;
+  box-shadow: 0 0 1em rgba(0,0,0,.5);
+  position: fixed;
+  z-index: 99999;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   ul{
-    li{
+    margin: 0;
+    padding: 0;
+    list-style: 0;
+    li{ 
+      display: inline;
       a{
+        display: inline-block;
+        padding: .25em;
+        color: #222;
+        font-size: 1.25em;
+        text-decoration: none;
+        border: 4px #ddd solid;
+        transition: all .5s ease-in-out;
         &:hover{
+          background: #fff;
+          color: #000;
         }
       }
     }

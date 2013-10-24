@@ -1,19 +1,61 @@
 *, *:before, *:after { box-sizing: border-box; }
 
-body{ background: #111; color: #fff; }
+body{ background: #f7f7f6; color: #111; padding-bottom: 2em;}
+
+$navcolour: #333;
+
+
+#main-container{
+  width: 1116px;
+  margin: 0 auto;
+}
 
 #main-header{
-  h1{
-
+  margin: 2em 0 1em;
+  position: relative;
+  #header-image{
+    width: 1116px;
+    height: 316px;
+    box-shadow: inset 0 0 .25em rgba(0,0,0,  .5),
+                      0 0  .75em .05em rgba(0,0,0, .25);
   }
-  nav{
+  h1{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    a{
+      color: $navcolour;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+  }
+  nav#main-nav{
+    text-align: right;
+    padding-top: 1em;
     ul{
+      display: inline;
+      list-style: none;
       li{
+        display: inline-block;
         a{
+          display: block;
+          padding-left: 2em; 
+          color: $navcolour;
+          text-decoration: none;
+          font-size: 1.5em;
+          text-transform: uppercase;
+          background: url('https://s3-us-west-2.amazonaws.com/sen2/static/sen_dot.png') no-repeat .9em .4em;
           &:hover{
+            color: black;
           }
           &.current{
           }
+        }
+        &:first-child a{
+          background: none;
         }
       }
     }
