@@ -1,30 +1,48 @@
 $admin: #000;
 
 nav#admin-nav{
-  background: #ddd;
-  box-shadow: 0 0 1em rgba(0,0,0,.5);
+  background: #f8fbff;
+  box-shadow: 0 0 .25em rgba(0,0,0,.5);
   position: fixed;
   z-index: 99999;
   bottom: 0;
   left: 0;
   width: 100%;
+  text-transform: lowercase;
   ul{
     margin: 0;
-    padding: 0;
+    padding: .5em .25em .5em;
     list-style: 0;
     li{ 
       display: inline;
       a{
         display: inline-block;
         padding: .25em;
-        color: #222;
-        font-size: 1.25em;
+        color: #bacfe0;
+        font-size: 2em;
         text-decoration: none;
-        border: 4px #ddd solid;
-        transition: all .5s ease-in-out;
+        transition: all .25s ease-in-out;
         &:hover{
-          background: #fff;
-          color: #000;
+          text-shadow: 0 0 5em #94b6d2;
+          color: #94b6d2;
+        }
+        &.sketchco{
+          background: #94b6d2;
+          color: #fff;
+          border-radius: 10px;
+          letter-spacing: -.1em;
+          &:hover{
+            background: #6fa1ca;
+            text-shadow: 0 0 1px black;
+          }
+        }
+        &.logout{
+          color: #e95c5c;
+          position: absolute;
+          right: 0;
+          &:hover{
+            background: none;
+          }
         }
       }
     }
