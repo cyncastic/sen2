@@ -8,5 +8,5 @@
     .fb-like{ data: { href: blog_url(blog.id), send: 'false', layout: 'button_count', font: 'lucida grande', colorscheme: 'dark' } }
     - if session[:user_id]
       %ul#admin-blog
-        %li= link_to 'Edit', edit_blog_path(blog)
-        %li= link_to 'Destroy', blog, method: :delete, class: 'delete_btn', data: { confirm: 'Are you sure?' }
+        %li= link_to 'Edit', edit_blog_path(blog), class: 'btn'
+        %li= link_to 'Destroy', blog, method: :delete, class: 'delete_btn btn', data: { confirm: 'Are you sure?' }
