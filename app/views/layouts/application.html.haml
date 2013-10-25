@@ -12,7 +12,7 @@
       - if notice
         %p#notice= notice
       %header#main-header
-        #header-image= image_tag 'https://s3-us-west-2.amazonaws.com/sen2/static/sen-header.png', alt: 'Sen2'
+        #header-image= render '/headers/activeheader'
         %h1= link_to 'Sen2', root_path, class: cp(root_path)
         %nav#main-nav
           %ul
