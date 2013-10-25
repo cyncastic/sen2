@@ -27,6 +27,9 @@
               %li= link_to 'SC', admin_path, class: 'sketchco'
               %li= link_to 'New Blog', new_blog_path
               %li= link_to 'New Artwork', new_artwork_path
+              %li= link_to 'Sort Artworks', artworks_path
+              %li= link_to 'Change Header', headers_path
+              %li= link_to 'Categories', categories_path
               %li= link_to 'Logout', logout_path, method: :delete, class: 'logout'
       #main-content
         = yield
