@@ -1,0 +1,25 @@
+
+ul#images{
+  margin: 0 -10px;
+  padding: 0;
+  list-style: none;
+  li{
+    display: block;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    a{
+      display: block;
+      height: 264px;
+      width: 264px;
+      margin: 10px;
+      background: #eee;
+      border-top: 1px #fff solid;
+      box-shadow: 0 0 .25em rgba(0,0,0,.5);
+      &:hover{}
+      img{
+        vertical-align: middle;
+      }
+    }
+  }
+}

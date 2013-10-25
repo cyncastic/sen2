@@ -5,13 +5,13 @@ article{
   margin-bottom: 5em;
   position: relative;
   a.blog-image{
+    border-top: 1px white solid;
+
     display: block;
     box-shadow: 0 0 .25em rgba(0,0,0,.5);
-    background: #111;
+    background: #040b22;
     text-align: center;
     img{
-      border-top: 1px white solid;
-      border-bottom: 1px black solid;
       vertical-align: middle;
     }
   }

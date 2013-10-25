@@ -19,7 +19,6 @@ nav#admin-nav{
         display: inline-block;
         padding: .25em;
         color: #bacfe0;
-        font-size: 2em;
         text-decoration: none;
         transition: all .25s ease-in-out;
         &:hover{
@@ -27,6 +26,7 @@ nav#admin-nav{
           color: #94b6d2;
         }
         &.sketchco{
+          padding: .1em 1em .333em;
           background: #94b6d2;
           color: #fff;
           border-radius: 10px;

@@ -7,6 +7,11 @@
       - @artwork.errors.full_messages.each do |msg|
         %li= msg
 
+
+  .field
+    = f.label :title
+    = f.text_field :title, autofocus: 'autofocus'
+    
   .field
     = f.label :category_id
     = f.collection_select(:category_id, Category.all, :id, :name, { selected: params[:category_id] })
@@ -18,10 +23,6 @@
   .field
     = f.label :sold
     = f.check_box :sold
-
-  .field
-    = f.label :title
-    = f.text_field :title
 
   .field
     = f.label :medium
