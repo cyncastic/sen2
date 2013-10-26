@@ -1,12 +1,13 @@
 %section.admin
   %h1 Listing Headers
   
-  - @headers.each do |header|
-    =image_tag header.image_url(:large), width: '50%'
-    = header.active
-    %td.actions
-      = link_to 'Edit', edit_header_path(header)
-      = link_to 'Destroy', header, method: :delete, data: { confirm: 'Are you sure?' }
+  %table
+    - @headers.each do |header|
+      %tr
+        %td
+          =image_tag header.image_url(:large), width: '100%'
+        %td.actions
+          = link_to 'Destroy', header, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn'
 
   .actions
     = link_to 'New Header', new_header_path, class: 'btn'
