@@ -1,11 +1,11 @@
 %section.admin
   %h1 Listing Headers
   
-  %table
+  %table#headers
     - @headers.each do |header|
       %tr
         %td
-          =image_tag header.image_url(:large), width: '100%'
+          =image_tag header.image_url(:large), class: header.active ? 'active' :nil , width: '100%'
         %td.actions
           = link_to 'Destroy', header, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn'
 

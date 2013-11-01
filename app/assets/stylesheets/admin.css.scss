@@ -108,6 +108,9 @@ section.admin{
         box-shadow: 0 0 5px rgba(0,0,0,.25);
         border: 4px #eee solid;
         vertical-align: middle;
+        &.active{
+          border: red solid 1px;
+        }
       }
       &.actions{
         text-align: right;
