@@ -8,4 +8,5 @@ CarrierWave.configure do |config|
   config.cache_dir = "#{Rails.root}/tmp/uploads" #for heroku
 
   config.fog_directory  = 'sentwo' # required
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
