@@ -1,6 +1,9 @@
 Sen2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.serve_static_assets = true
+  config.static_cache_control = "public, max-age=2419200"
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
