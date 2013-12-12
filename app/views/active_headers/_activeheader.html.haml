@@ -1,0 +1,5 @@
+/ - Header.where(id: ).each do |header|
+/   =image_tag header.image_url(:large)
+
+- ActiveHeader.where(id: 1).each do |active|
+  = image_tag active.header.image_url(:large)

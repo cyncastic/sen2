@@ -1,6 +1,5 @@
 Sen2::Application.routes.draw do
 
-
   root 'blogs#index'
 
   get 'contact' => 'static#contact'
@@ -8,7 +7,7 @@ Sen2::Application.routes.draw do
   get 'admin' => 'admin#index'
   get 'pricelist' => 'pricelist#index'
 
-  resources :blogs, :users, :headers
+  resources :blogs, :users, :headers, :active_headers
 
   resources :artworks,:categories do
     collection do

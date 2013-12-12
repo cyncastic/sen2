@@ -1,0 +1,19 @@
+= form_for(@active_header) do |f|
+  - if @active_header.errors.any?
+    #error_explanation
+      #h2= pluralize(@header.errors.count, "error") + 'prohibited this category from being saved'
+      %ul
+        -@active_header.errors.full_messages.each do |msg|
+          %li= msg
+
+  %table#headers
+    - @headers.each do |header|
+      %tr
+        %td
+          =image_tag header.image_url(:large), width: '100%'
+        %td.actions
+          =f.radio_button :header_id, header.id
+
+  .actions
+    = f.submit class: 'btn'
+    = link_to 'New Header', new_header_path, class: 'btn'

@@ -1,0 +1,19 @@
+%h1 Listing active_headers
+
+%table
+  %thead
+    %tr
+      %th Id
+      %th
+
+  %tbody
+    - @active_headers.each do |active_header|
+      %tr
+        %td= active_header.header_id
+        %td.actions
+          = link_to 'Show', active_header
+          = link_to 'Edit', edit_active_header_path(active_header)
+          = link_to 'Destroy', active_header, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+= link_to 'New Active header', new_active_header_path
