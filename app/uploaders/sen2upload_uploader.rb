@@ -10,12 +10,12 @@ class Sen2uploadUploader < CarrierWave::Uploader::Base
   end
 
   version :large do
-    process :resize_to_limit => [950, 950]
+    process :resize_to_limit => [1272, 1272]
   end
 
   version :thumb do
     process :crop
-    process :resize_to_fill => [264, 264]
+    process :resize_to_fill => [336, 336]
   end
 
   version :icon do

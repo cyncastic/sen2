@@ -8,11 +8,11 @@
     = csrf_meta_tags
 
   %body
-    #main-container
-      - if notice
-        %p#notice= notice
-      %header#main-header
-        #header-image= render '/active_headers/activeheader'
+    - if notice
+      %p#notice= notice
+    .container
+      %header.main
+        = render '/active_headers/activeheader'
         %h1= link_to 'Sen2', root_path, class: cp(root_path)
         %nav#main-nav
           %ul
@@ -30,5 +30,5 @@
               %li= link_to 'Change Header', edit_active_header_path(1)
               %li= link_to 'Categories', categories_path
               %li= link_to 'Logout', logout_path, method: :delete, class: 'logout'
-      #main-content
+      .content
         = yield
