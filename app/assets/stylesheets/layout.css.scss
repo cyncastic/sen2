@@ -83,7 +83,7 @@
   
   header.main{
     position: relative;
-    margin: ($gutter / $em) 0;
+    margin: ($gutter / $em) 0 0;
     img{ 
       height: auto;
       box-shadow: 0 0 .25em rgba(0,0,0,.5);
@@ -97,10 +97,18 @@
     bottom: 0;
     ul li{
       display: inline;
-      a{ margin-left: 1em; }
+      &::after{
+        content: '\00B7';
+        margin: 0 .25em 0 .5em;
+        color: $black;
+      }
+      &:last-child{
+        &::after{
+          content: none
+        }
+      }
     }
   }
-
 
   .images{
     li{
@@ -112,12 +120,31 @@
       @include image-style;
     }
   }
-  .blog-image{
-    background: $black;
-    display: block;
-    text-align: center;
-    @include image-style;
-    overflow: hidden;
+
+.posts{
+
+    .blog-image{
+      background: $black;
+      display: block;
+      text-align: center;
+      @include image-style;
+      overflow: hidden;
+    }
+    header{
+      position: relative;
+      h1{
+        font-size: 2em;
+        line-height: 1.5em;
+      }
+      .posted{
+        position: absolute;
+        right: 0;
+        bottom: .5em;
+      }
+    }
+    .post{
+      text-align: center;
+    }
   }
 
 //---------------------------------------------------------------------------------------------

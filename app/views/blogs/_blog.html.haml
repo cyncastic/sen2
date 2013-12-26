@@ -1,8 +1,8 @@
 %article
-  %a.blog-image{ href: blog_url(blog.id) }=image_tag blog.image_url(:large), alt: blog.title
   %header
     %h1= link_to blog.title, blog
-    .posted= blog.posted
+    .posted= blog.posted.strftime("%h. %d, %Y")
+  %a.blog-image{ href: blog_url(blog.id) }=image_tag blog.image_url(:large), alt: blog.title
   .post= raw(blog.post)
   %footer
     .fb-like{ data: { href: blog_url(blog.id), send: 'false', layout: 'button_count', font: 'lucida grande', colorscheme: 'dark' } }
