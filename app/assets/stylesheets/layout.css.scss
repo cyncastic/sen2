@@ -101,10 +101,25 @@
         content: '\00B7';
         margin: 0 .25em 0 .5em;
         color: $black;
+        display: inline-block;
+
       }
       &:last-child{
         &::after{
           content: none
+        }
+      }
+      &:hover{
+        &::after{
+          @include animation(spaceboots .125s infinite linear);
+        }
+      }
+
+      a{ 
+        color: $grey;
+        @include transition(color .5s ease-out);
+        &:hover{
+          color: $black;
         }
       }
     }
@@ -125,15 +140,14 @@
           z-index: -1;
         }
         &:after{
-          content: attr(data-title);
-          position: absolute;
           display: block;
           width: 100%;
+          content: attr(data-title);
           background: $white;
-          text-align: center;
-          @include transition (top 0.5s ease-in);
-          top: -3em;
           box-shadow: 0 0 4px rgba(0,0,0,.25);
+          text-align: center;
+          @include position(absolute, -3em 0 0 0);
+          @include transition (top 0.5s ease-in);
         }
         &:hover:after{
           top: 0;
@@ -150,6 +164,7 @@
         text-align: center;
         display: block;
         content: '\00B7';
+        @include animation(spaceboots .125s infinite linear);
       }
     }
     .blog-image{
@@ -169,7 +184,7 @@
         position: absolute;
         right: 0;
         bottom: .4em;
-        color: lighten($grey, 25%);
+        color: $grey;
       }
     }
     .post{
@@ -223,3 +238,22 @@
   @media screen and (min-width: $cols26){
     body{ font-size: 18px / $em; }
   }
+
+
+
+  //----------------------------------
+  // ANIMATIONS
+
+@include keyframes(spaceboots) {
+  0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+  30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+  40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+  90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
