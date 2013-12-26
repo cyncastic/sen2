@@ -117,12 +117,41 @@
       display: block;
       float: left;
       overflow: hidden;
-      @include image-style;
+      @include image-style;      
+      a{
+        img{
+          display: block;
+          position: relative;
+          z-index: -1;
+        }
+        &:after{
+          content: attr(data-title);
+          position: absolute;
+          display: block;
+          width: 100%;
+          background: $white;
+          text-align: center;
+          @include transition (top 0.5s ease-in);
+          top: -3em;
+          box-shadow: 0 0 4px rgba(0,0,0,.25);
+        }
+        &:hover:after{
+          top: 0;
+          @include transition (top 0.2s ease-out);
+        }
+      }
     }
   }
 
 .posts{
-
+    article{
+      &::after{
+        font-size: 2em;
+        text-align: center;
+        display: block;
+        content: '\00B7';
+      }
+    }
     .blog-image{
       background: $black;
       display: block;
@@ -139,11 +168,13 @@
       .posted{
         position: absolute;
         right: 0;
-        bottom: .5em;
+        bottom: .4em;
+        color: lighten($grey, 25%);
       }
     }
     .post{
       text-align: center;
+      line-height: 1.5em;
     }
   }
 

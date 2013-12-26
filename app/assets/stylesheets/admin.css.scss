@@ -1,5 +1,18 @@
 $admin: #000;
 
+.admin-panel{
+  h2{
+    margin-left: .5em;
+  }
+  ul{
+    @include clearfix;
+    margin:0 0 1em 1em;
+    li{
+      display: inline;
+    }
+  }
+}
+
 nav#admin-nav{
   background: rgba(255,255,255,.96);
   box-shadow: 0 0 .25em rgba(0,0,0,.5);
@@ -61,7 +74,10 @@ section.admin{
   background: #ddd;
   box-shadow: 0 0 .25em rgba(0,0,0,.5);
   h1{
-    padding: .5em;
+    font-size: 2em;
+    line-height: 1.5em;
+    padding-left: .25em;
+    margin-bottom: .5em;
     background: #eee;
     color: #333;
     border-top-left-radius: 10px;
@@ -71,11 +87,9 @@ section.admin{
     font-size: 1em;
     width: 100%;
     background-color: #ddd;
-    // border: 4px lighten($admin, 30%) solid;
     margin-bottom: 1.5em;
     thead{
       border-bottom: 2px #ccc solid;
-
     }
     th, td{
       padding: .125em .25em;
