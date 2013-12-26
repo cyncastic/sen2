@@ -13,21 +13,25 @@
     .container
       %header.main
         = render '/active_headers/activeheader'
-        %h1= link_to 'Sen2', root_path, class: cp(root_path)
-        %nav#main-nav
-          %ul
-            %li= link_to 'Blog', blogs_path, class: cp(blogs_path)
-            = render '/categories/listcats'
-            %li= link_to 'Contact', contact_path, class: cp(contact_path)
-            %li= link_to 'Store', 'http://www.adyingbreednyc.com/#!store/cwvn', target: '_blank'
-        - if session[:user_id]
-          %nav#admin-nav
+        .pinned
+          %h1= link_to 'Sen2', root_path, class: cp(root_path)
+          %nav#main-nav
             %ul
-              %li= link_to 'New Blog', new_blog_path
-              %li= link_to 'New Artwork', new_artwork_path
-              %li= link_to 'Sort Artworks', artworks_path
-              %li= link_to 'Change Header', edit_active_header_path(1)
-              %li= link_to 'Categories', categories_path
-              %li= link_to 'Logout', logout_path, method: :delete, class: 'logout'
+              %li= link_to 'Blog', blogs_path, class: cp(blogs_path)
+              = render '/categories/listcats'
+              %li= link_to 'Contact', contact_path, class: cp(contact_path)
+              %li= link_to 'Store', 'http://www.adyingbreednyc.com/#!store/cwvn', target: '_blank'
       .content
         = yield
+
+
+
+      - if session[:user_id]
+        %nav#admin-nav
+          %ul
+            %li= link_to 'New Blog', new_blog_path
+            %li= link_to 'New Artwork', new_artwork_path
+            %li= link_to 'Sort Artworks', artworks_path
+            %li= link_to 'Change Header', edit_active_header_path(1)
+            %li= link_to 'Categories', categories_path
+            %li= link_to 'Logout', logout_path, method: :delete, class: 'logout'
