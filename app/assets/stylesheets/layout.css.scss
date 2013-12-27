@@ -43,7 +43,7 @@
   $black: #110c0f;
   $white: #f7f7f6;
   $grey:  #555555;
-  $links: #f48d2e;
+  $red:   #DA291C;
 
   // Grid Background;
   $grid-bg: url('https://s3-us-west-2.amazonaws.com/popupxnyc/static/grid-bg.gif');
@@ -78,7 +78,7 @@
     box-shadow: 0 0 .25em rgba(0,0,0,.5);
   }
 
-  body{ background-color: $white; }
+  body{ background-color: $white;}
   .container{ margin: 0 auto; }
   
   header.main{
@@ -92,8 +92,8 @@
     }
     .pinned{ background: rgba(247,247,246,.97); box-shadow: 0 0 .5em $white; z-index: 999}
   }
-  nav#main-nav{
 
+  nav#main-nav{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -113,7 +113,7 @@
       }
       &:hover{
         &::after{
-          color: red;
+          color: $red;
           @include transition(color 18s ease-out);
           @include animation(spaceboots .125s infinite linear);
         }
@@ -128,7 +128,6 @@
       }
     }
   }
-
   .images{
     margin-top: 3em;
     @include clearfix;
@@ -140,19 +139,21 @@
       overflow: hidden;
       @include image-style;      
       a{
-        &:after{
+        &::after{
           content: attr(data-title);
           display: block;
-          width: 100%;
-          background: $white;
-          box-shadow: 0 0 4px rgba(0,0,0,.25);
-          text-align: center;
-          @include position(absolute, -3em 0 0 0);
-          @include transition (top 0.5s ease-in);
-        }
-        &:hover:after{
+          @include position(absolute);
           top: 0;
-          @include transition (top 0.2s ease-out);
+          width: 100%; height: 100%;
+          background: $white;
+          text-align: center;
+          
+          @include transition (opacity 0.5s ease-in);
+          opacity: 0;
+        }
+        &:hover::after{
+          opacity: .9;
+          @include transition (opacity 0.2s ease-out);
         }
       }
     }
@@ -166,7 +167,7 @@
     }
   }
 
-.posts{
+  .posts{
     article{
       &::after{
         font-size: 2em;
@@ -192,7 +193,6 @@
       h1{
         font-size: 2em;
         line-height: 1.5em;
-        background: red;
       }
       .posted{
         position: absolute;
@@ -208,10 +208,13 @@
 //---------------------------------------------------------------------------------------------
 //  MEDIA QUERIES
 
+    @media screen and (max-width: $cols8){
+      body{ font-size: 14px / $em; }
+    }
   // 8 Cols
     @media screen and (min-width: $cols1) {
       .container, .header-img, .blog-image{ @include width(8); }
-      .images{ li, img{ @include size($cols4); }}
+      .images{ li, img{ @include size($cols4); } a::after{ line-height: $cols4; } }
       .images li:nth-child(2n+2){ margin-right: 0; }
       header.main{  h1, nav{ font-size: 1em; line-height: 1.5em; }}
     }
@@ -219,7 +222,6 @@
   // 12 Cols
     @media screen and (min-width: $cols12){
       .container, .header-img, .blog-image{ @include width(12); }
-      .images{ li, img{ @include size($cols4); }}
       .images li:nth-child(2n+2){ margin-right: $gutter / $em; }
       .images li:nth-child(3n+3){ margin-right: 0; }
       header.main{  h1, nav{ font-size: 1.25em; line-height: 1.75em; }}
@@ -228,28 +230,26 @@
   // 15 Cols
     @media screen and (min-width: $cols15){
       .container, .header-img, .blog-image{ @include width(15); }
-      .images{ li, img{ @include size($cols5); }}
+      .images{ li, img{ @include size($cols5); } a::after{ line-height: $cols5; }}
       header.main{  h1, nav{ font-size: 1.5em; line-height: 2em; }}
     }
 
   // 18 Cols
     @media screen and (min-width: $cols18){
       .container, .header-img, .blog-image{ @include width(18); }
-      .images{ li, img{ @include size($cols6); }}
+      .images{ li, img{ @include size($cols6); } a::after{ line-height: $cols6; }}
     }
 
   // 22 Cols
     @media screen and (min-width: $cols24){
       .container, .header-img, .blog-image{ @include width(24); }
-      .images{ li, img{ @include size($cols6); }}
       .images li:nth-child(3n+3){ margin-right: $gutter / $em; }
       .images li:nth-child(4n+4){ margin-right: 0; }
     }
-
-
-  @media screen and (min-width: $cols26){
-    body{ font-size: 18px / $em; }
-  }
+  // Larger
+    @media screen and (min-width: $cols26){
+      body{ font-size: 18px / $em; }
+    }
 
 
 
