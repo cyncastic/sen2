@@ -109,5 +109,4 @@
 
 $(function() {
   $('.pinned').pin({ minWidth: 940 });
-  $('.posts article h1').pin({ minWidth: 940 });
 });
