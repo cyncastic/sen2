@@ -19,7 +19,7 @@
             %ul
               %li= link_to 'Blog', blogs_path, class: cp(blogs_path)
               = render '/categories/listcats'
-              %li= link_to 'Contact', contact_path, class: cp(contact_path)
+              / %li= link_to 'Contact', contact_path, class: cp(contact_path)
               %li= link_to 'Store', 'http://www.adyingbreednyc.com/#!store/cwvn', target: '_blank'
       .content
         = yield
