@@ -1,12 +1,11 @@
 !!! 5
 %html
   %head
-    %title Sen2
+    %title Jamie Hef
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     %link{ href: 'http://fonts.googleapis.com/css?family=Noto+Sans:400,700', rel: 'stylesheet', type: 'text/css' }
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-
   %body
     - if notice
       %p#notice= notice
@@ -14,18 +13,14 @@
       %header.main
         = render '/active_headers/activeheader'
         .pinned
-          %h1= link_to 'Sen2', root_path, class: cp(root_path)
+          %h1= link_to 'Jamie Hef', root_path, class: cp(root_path)
           %nav#main-nav
             %ul
               %li= link_to 'Blog', blogs_path, class: cp(blogs_path)
               = render '/categories/listcats'
-              / %li= link_to 'Contact', contact_path, class: cp(contact_path)
-              %li= link_to 'Store', 'http://www.adyingbreednyc.com/#!store/cwvn', target: '_blank'
+              %li= link_to 'Contact', contact_path, class: cp(contact_path)
       .content
         = yield
-
-
-
       - if session[:user_id]
         %nav#admin-nav
           %ul
